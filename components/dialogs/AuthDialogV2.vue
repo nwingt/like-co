@@ -470,38 +470,49 @@ export default {
 <style lang="scss" scoped>
 .root-classes {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .content-container {
   position: relative;
+
   color: #4a4a4a;
 }
 
 .header {
   display: flex;
   flex-wrap: nowrap;
+
   margin-bottom: 12px;
   .header-icon {
     margin-right: 12px;
   }
   .header-text {
+    color: #28646e;
+
     font-size: 16px;
     font-weight: 600;
+
     line-height: 20px;
-    color: #28646e;
   }
 }
 
 .auth-btn {
   display: block;
+
+  margin: 12px 0px;
+
+
+  padding: 24px;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+
   border: 4px solid #ebebeb;
   border-radius: 16px;
-  transition: all 0.2s;
-  padding: 24px;
-  margin: 12px 0px;
-  cursor: pointer;
+
   &:hover {
     border-color: #50e3c2;
     background-color: #d7ecec;
@@ -511,16 +522,19 @@ export default {
   }
   .title-wapper {
     display: flex;
-    justify-content: start;
     align-items: center;
+    justify-content: start;
+
     margin-bottom: 8px;
     .icon {
+
       margin-right: 12px;
     }
     .name {
       font-size: 20px;
-      line-height: 28px;
       font-weight: 600;
+
+      line-height: 28px;
     }
   }
   .description {
@@ -533,22 +547,27 @@ export default {
   transition: all 0.2s ease;
 }
 .slide-enter {
-  opacity: 0;
   height: 0px;
+
+  opacity: 0;
 }
 
 .dropdown-toggle {
-  width: 100%;
   display: flex;
-  justify-content: center;
+
   align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
   &--clickable {
     cursor: pointer;
   }
   .text {
+    margin-right: 8px;
+
     font-size: 14px;
     font-weight: 600;
-    margin-right: 8px;
   }
   .icon {
     display: flex;
@@ -557,6 +576,7 @@ export default {
 }
 
 .legacy-content-container {
+
   color: #9b9b9b;
   .text {
     text-decoration: underline;

@@ -109,6 +109,7 @@ $max-width: 420px;
 
     @media screen and (min-width: $max-width + 1px) {
       margin: 104px auto 16px;
+
       border-radius: 24px;
     }
 

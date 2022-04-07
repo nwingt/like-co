@@ -52,14 +52,17 @@ html[layout=register-layout] {
   }
 
   .container {
-    min-height: 100vh;
     display: flex;
+
     flex-flow: column;
+
+    min-height: 100vh;
   }
 
   .logo-wapper {
     display: flex;
     justify-content: center;
+
     padding: 41px 0px;
   }
 
