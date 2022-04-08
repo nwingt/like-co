@@ -2,6 +2,11 @@ import WalletConnectClient from '@walletconnect/client';
 import WalletConnectQRCodeModal from '@walletconnect/qrcode-modal';
 import { payloadId } from '@walletconnect/utils';
 
+import {
+  EXTERNAL_HOSTNAME,
+  EXTERNAL_URL,
+} from '../constant';
+
 import network from './cosmos/network';
 
 class WalletConnect {
@@ -24,6 +29,15 @@ class WalletConnect {
         bridge: 'https://bridge.walletconnect.org',
         qrcodeModal: WalletConnectQRCodeModal,
       });
+      // XXX: Client meta options in the constructor is ignored
+      // https://github.com/osmosis-labs/osmosis-frontend/blob/9c5f8cf5de035348e0aeb38468f1b8a208a9b99d/src/dialogs/connect-wallet.tsx#L185-L193
+      // eslint-disable-next-line no-underscore-dangle
+      connector._clientMeta = {
+        name: EXTERNAL_HOSTNAME,
+        description: EXTERNAL_HOSTNAME,
+        url: EXTERNAL_URL,
+        icons: [`${EXTERNAL_URL}/logo.png`],
+      };
       connector.on('disconnect', () => {
         connector.killSession();
         this.reset();
